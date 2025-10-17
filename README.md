@@ -1,5 +1,19 @@
 # 💰 API de Gestão Financeira Pessoal
 
+## Índice
+
+- [Informações](#-informações-do-projeto)
+- [Descrição](#descrição)
+- [Arquitetura e Tecnologias](#️-arquitetura-e-tecnologias)
+- [Modelos de Dados](#-modelos-de-dados-entidades)
+- [Relacionamentos Entre Entidades](#-relacionamentos-entre-entidades)
+- [Principais Funcionalidades da API](#-principais-funcionalidades-da-api)
+- [Funcionalidades Detalhadas por Entidade](#-funcionalidades-detalhadas-por-entidade)
+- [Implementação da Carta-Desafio](#-implementação-da-carta-desafio-limite-de-requisições)
+- [Roadmap de Desenvolvimento](#-roadmap-de-desenvolvimento)
+- [Referências e Recursos](#-referências-e-recursos)
+- [Contato](#contato)
+
 ## 📋 Informações do Projeto
 
 **Disciplina:** Back-end
@@ -16,7 +30,7 @@
 
 ---
 
-## 🎯 Descrição do Projeto
+## 🎯 Descrição
 
 A **API de Gestão Financeira Pessoal** é uma solução backend completa para controle de finanças pessoais, permitindo que usuários gerenciem suas contas bancárias, registrem transações financeiras (receitas e despesas), categorizem gastos e acompanhem seu patrimônio de forma organizada e eficiente.
 
