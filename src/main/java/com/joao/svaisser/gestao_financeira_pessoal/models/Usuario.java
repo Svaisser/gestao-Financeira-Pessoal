@@ -1,6 +1,9 @@
 package com.joao.svaisser.gestao_financeira_pessoal.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDateTime;
 
@@ -12,12 +15,16 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Email(message = "Email inválido")
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
+    @NotBlank(message = "Nome é obrigatório")
     @Column(name = "nome", nullable = false)
     private String nome;
 
+    @NotBlank(message = "Senha é obrigatória")
+    @Size(min = 8, message = "A senha deve ter no mínimo 8 caracteres")
     @Column(name = "senha", nullable = false)
     private String senha;
 

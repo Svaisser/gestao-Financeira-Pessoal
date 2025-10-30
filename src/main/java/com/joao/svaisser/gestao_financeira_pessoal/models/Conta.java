@@ -2,6 +2,7 @@ package com.joao.svaisser.gestao_financeira_pessoal.models;
 
 import com.joao.svaisser.gestao_financeira_pessoal.enums.TipoConta;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -14,6 +15,7 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Nome é obrigatório")
     @Column(name = "nome", nullable = false)
     private String nome;
 
@@ -21,6 +23,7 @@ public class Conta {
     @Column(name = "tipo", nullable = false)
     private TipoConta tipo;
 
+    @NotBlank(message = "Saldo é obrigatório")
     @Column(name = "saldo", nullable = false)
     private BigDecimal saldo;
 
