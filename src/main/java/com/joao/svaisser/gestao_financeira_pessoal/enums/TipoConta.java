@@ -4,7 +4,6 @@ public enum TipoConta {
     CORRENTE("C", "Conta Corrente"),
     POUPANCA("P", "Conta Poupança"),
     INVESTIMENTO("I", "Conta de Investimento"),
-    CARTAO_CREDITO("CC", "Cartão de Crédito"),
     SALARIO("S", "Conta Salário");
 
     private final String value;

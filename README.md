@@ -107,7 +107,7 @@ Representa uma conta bancária ou financeira do usuário (conta corrente, poupan
 **Atributos:**
 - `id` (Long): Identificador único da conta
 - `nome` (String): Nome/descrição da conta (ex: "Nubank Corrente")
-- `tipo` (TipoConta): Tipo da conta (CORRENTE, POUPANCA, INVESTIMENTO, CARTEIRA)
+- `tipo` (TipoConta): Tipo da conta (CORRENTE, POUPANCA, INVESTIMENTO, SALARIO)
 - `saldo` (BigDecimal): Saldo atual da conta
 - `moeda` (String): Moeda da conta (BRL, USD, EUR)
 - `dataCriacao` (LocalDateTime): Data de criação da conta
@@ -408,4 +408,4 @@ Para dúvidas ou sugestões sobre o projeto, entre em contato com a equipe atrav
 
 ---
 
-**Última atualização:** 17 de outubro de 2025
+**Última atualização:** 30 de outubro de 2025
