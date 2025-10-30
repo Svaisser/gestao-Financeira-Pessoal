@@ -53,7 +53,7 @@ Muitas pessoas têm dificuldade em controlar suas finanças pessoais, não saben
 
 - **Framework:** Spring Boot 3.x
 - **Linguagem:** Java 17+
-- **Banco de Dados:** PostgreSQL
+- **Banco de Dados:** Supabase
 - **Gerenciamento de Dependências:** Maven
 - **Documentação:** Swagger/OpenAPI 3.0
 - **Autenticação:** JWT (JSON Web Tokens)
