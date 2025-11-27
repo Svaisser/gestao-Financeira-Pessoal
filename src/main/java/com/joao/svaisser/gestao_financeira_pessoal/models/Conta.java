@@ -2,39 +2,44 @@ package com.joao.svaisser.gestao_financeira_pessoal.models;
 
 import com.joao.svaisser.gestao_financeira_pessoal.enums.TipoConta;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-
+import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "conta")
 public class Conta {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Nome é obrigatório")
-    @Column(name = "nome", nullable = false)
+    @NotBlank(message = "Nome da conta não pode ser vazio")
     private String nome;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "tipo", nullable = false)
+    @Column(nullable = false)
     private TipoConta tipo;
 
-    @NotBlank(message = "Saldo é obrigatório")
-    @Column(name = "saldo", nullable = false)
+    @NotNull(message = "Saldo não pode ser nulo")
+    @Digits(integer = 20, fraction = 2, message = "Saldo deve ser um valor decimal válido")
     private BigDecimal saldo;
 
-    @Column(name = "moeda", nullable = false, length = 3)
+    @NotBlank(message = "Moeda não pode ser vazia")
     private String moeda;
 
     @Column(name = "data_criacao", nullable = false, updatable = false)
     private LocalDateTime dataCriacao = LocalDateTime.now();
 
-    @Column(name = "ativo", nullable = false)
-    private Boolean ativo = true;
+    @Column(nullable = false)
+    private Boolean ativa = true;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id", nullable = false)
+    private Usuario usuario;
+
+    @OneToMany(mappedBy = "conta", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Transacao> transacoes;
 
     public Long getId() {
         return id;
@@ -84,12 +89,12 @@ public class Conta {
         this.dataCriacao = dataCriacao;
     }
 
-    public Boolean getAtivo() {
-        return ativo;
+    public Boolean getAtiva() {
+        return ativa;
     }
 
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
+    public void setAtiva(Boolean ativa) {
+        this.ativa = ativa;
     }
 
     public Usuario getUsuario() {
@@ -100,7 +105,11 @@ public class Conta {
         this.usuario = usuario;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private Usuario usuario;
+    public List<Transacao> getTransacoes() {
+        return transacoes;
+    }
+
+    public void setTransacoes(List<Transacao> transacoes) {
+        this.transacoes = transacoes;
+    }
 }
